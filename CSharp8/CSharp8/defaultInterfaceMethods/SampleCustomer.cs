@@ -25,7 +25,7 @@ namespace CSharp8.defaultInterfaceMethods
 
         public void AddOrder(IOrder order)
         {
-            if(order.Purchased > (LastOrder ?? DateTime.MinValue))
+            if (order.Purchased > (LastOrder ?? DateTime.MinValue))
             {
                 LastOrder = order.Purchased;
             }

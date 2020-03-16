@@ -41,6 +41,14 @@ namespace CSharp8
             o = new SampleOrder(new DateTime(2103, 7, 4), 25m);
             c.AddOrder(o);
 
+            /*
+                実装先のクラス(SampleCustomer)で関数をオーバーライドしていない限り、
+                インターフェースへのキャストが必須である事に注意！
+
+             */
+            ICustomer theCustomer = c;
+            Console.WriteLine($"Current Discount: {theCustomer.ComputeLoyaltyDiscount()}");
+
             Console.WriteLine($"Data about {c.Name}");
             Console.WriteLine($"Joined on {c.DateJoined}. Made {c.PreviousOrders.Count()} orders, the last on {c.LastOrder}");
             Console.WriteLine("Reminders:");
