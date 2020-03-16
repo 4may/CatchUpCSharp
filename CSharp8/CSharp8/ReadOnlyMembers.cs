@@ -12,7 +12,7 @@ public struct Point
 
     /*
     readonlyプロパティからreadonlyでないプロパティを参照すると警告が出る。
-
-    */
+    ここでは、Distanceにreadonlyをつけることで解消
+        */
     public readonly override string ToString() => $"({X}, {Y}) is {Distance} from the origin";
 }
