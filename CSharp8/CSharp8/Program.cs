@@ -47,6 +47,7 @@ namespace CSharp8
 
              */
             ICustomer theCustomer = c;
+            ICustomer.SetLoyaltyThreshholds(new TimeSpan(30, 0, 0, 0), 1, 0.25m);
             Console.WriteLine($"Current Discount: {theCustomer.ComputeLoyaltyDiscount()}");
 
             Console.WriteLine($"Data about {c.Name}");
