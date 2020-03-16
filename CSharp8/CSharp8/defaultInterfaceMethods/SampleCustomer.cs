@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharp8.defaultInterfaceMethods
 {
@@ -30,6 +31,18 @@ namespace CSharp8.defaultInterfaceMethods
                 LastOrder = order.Purchased;
             }
             allOrders.Add(order);
+        }
+
+        public decimal ComputeLoyaltyDiscount()
+        {
+            if(PreviousOrders.Any() == false)
+            {
+                return 0.50m;
+            }
+            else
+            {
+                return ICustomer.DefaultLoyaltyDiscount(this);
+            }
         }
     }       
 }
