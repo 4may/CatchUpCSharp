@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 
 # System files for mac
-.DS_Storez
+.DS_Store
