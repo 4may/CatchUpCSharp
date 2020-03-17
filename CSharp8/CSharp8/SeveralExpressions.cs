@@ -28,6 +28,7 @@ namespace CSharp8
                 _ => throw new ArgumentException(message: "Invalid enum value", paramName: nameof(colorBand)),
             };
 
+        //switch expressionのなかで、プロパティアクセス
         public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
             location switch
             {
@@ -37,7 +38,39 @@ namespace CSharp8
                 _ => 0M
             };
 
+        //switch expressionのなかで、タプルを使用
+        public static string RockPaperScissors(string first, string second) =>
+        (first, second) switch
+        {
+            ("rock", "paper") => "rock is covered by paper. Paper wins.",
+            ("rock", "scisors") => "rock breaks scissors. Rock wins.",
+            ("paper", "rock") => "paper covers rock. Paper wins",
+            //...
+            (_, _) => "tie"
+        };
 
+        public enum Quadrant
+        {
+            Unknown,
+            Origin,
+            One,
+            Two,
+            Three,
+            Four,
+            OnBorder
+        }
+
+        public static Quadrant GetQuadrant(Point point) =>
+            point switch
+            {
+                (0, 0) => Quadrant.Origin,
+                var (x, y) when x > 0 && y > 0 => Quadrant.One,
+                var (x, y) when x < 0 && y > 0 => Quadrant.One,
+                var (x, y) when x < 0 && y < 0 => Quadrant.One,
+                var (x, y) when x > 0 && y < 0 => Quadrant.One,
+                var (_, _) => Quadrant.OnBorder,
+                _ => Quadrant.Unknown
+            };
     }
 
     

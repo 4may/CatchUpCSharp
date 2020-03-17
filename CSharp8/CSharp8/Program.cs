@@ -17,7 +17,7 @@ namespace CSharp8
 
         private static void CallReadOnlyMembers()
         {
-            var point = new Point()
+            var point = new DoublePoint()
             {
                 X = 20.5,
                 Y = 30.2
@@ -70,6 +70,12 @@ namespace CSharp8
 
             decimal tax = SeveralExpressions.ComputeSalesTax(new Address("WA"), 100);
             Console.WriteLine($"tax:{tax}");
+
+            string result = SeveralExpressions.RockPaperScissors("rock", "paper");
+            Console.WriteLine(result);
+
+            SeveralExpressions.Quadrant quadrant = SeveralExpressions.GetQuadrant(new Point(10, 10));
+            Console.WriteLine($"quadrant:{quadrant}");
         }
     }
 }

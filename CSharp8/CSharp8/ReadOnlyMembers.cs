@@ -4,7 +4,7 @@
     structのメンバー変数にもreadonlyプロパティが適用できるようになった。
 
 */
-public struct Point
+public struct DoublePoint
 {
     public double X { get; set; }
     public double Y { get; set; }
