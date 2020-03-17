@@ -10,7 +10,9 @@ namespace CSharp8
         {
             //CallReadOnlyMembers();
 
-            CallDefaultInterfaceMethods();
+            //CallDefaultInterfaceMethods();
+
+            CallSeveralExpressions();
         }
 
         private static void CallReadOnlyMembers()
@@ -59,6 +61,12 @@ namespace CSharp8
             }
             foreach (IOrder order in c.PreviousOrders)
                 Console.WriteLine($"Order on {order.Purchased} for {order.Cost}");
+        }
+
+        private static void CallSeveralExpressions()
+        {
+            RGBColor color = SeveralExpressions.FromRainbow(SeveralExpressions.Rainbow.Blue);
+            Console.WriteLine($"{color.R},{color.G},{color.B}");
         }
     }
 }
