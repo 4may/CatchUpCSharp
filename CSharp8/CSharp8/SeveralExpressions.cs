@@ -28,9 +28,16 @@ namespace CSharp8
                 _ => throw new ArgumentException(message: "Invalid enum value", paramName: nameof(colorBand)),
             };
 
-        public SeveralExpressions()
-        {
-        }
+        public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
+            location switch
+            {
+                { State: "WA" } => salePrice * 0.06M,
+                { State: "MN" } => salePrice * 0.06M,
+                { State: "MI" } => salePrice * 0.06M,
+                _ => 0M
+            };
+
+
     }
 
     

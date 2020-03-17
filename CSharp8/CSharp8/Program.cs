@@ -67,6 +67,9 @@ namespace CSharp8
         {
             RGBColor color = SeveralExpressions.FromRainbow(SeveralExpressions.Rainbow.Blue);
             Console.WriteLine($"{color.R},{color.G},{color.B}");
+
+            decimal tax = SeveralExpressions.ComputeSalesTax(new Address("WA"), 100);
+            Console.WriteLine($"tax:{tax}");
         }
     }
 }
