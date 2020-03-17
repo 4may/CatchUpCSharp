@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CSharp8.defaultInterfaceMethods;
 
@@ -12,7 +13,11 @@ namespace CSharp8
 
             //CallDefaultInterfaceMethods();
 
-            CallSeveralExpressions();
+            //CallSeveralExpressions();
+
+            //CallUsingDeclarations();
+
+            CallStaticLocalFunctions();
         }
 
         private static void CallReadOnlyMembers()
@@ -76,6 +81,26 @@ namespace CSharp8
 
             SeveralExpressions.Quadrant quadrant = SeveralExpressions.GetQuadrant(new Point(10, 10));
             Console.WriteLine($"quadrant:{quadrant}");
+        }
+
+        private static void CallUsingDeclarations()
+        {
+            IEnumerable<string> lines = new List<string>()
+            {
+                "Second",
+                "Skipped",
+                "Skipped",
+                "Second",
+                "Skipped"
+            };
+            int skippedLines = UsingDeclarations.WriteLinesToFile(lines);
+            Console.WriteLine($"skippedLines:{skippedLines}");
+        }
+
+        private static void CallStaticLocalFunctions()
+        {
+            int result = new StaticLocalFunctions().M();
+            Console.WriteLine($"result:{result}");
         }
     }
 }
