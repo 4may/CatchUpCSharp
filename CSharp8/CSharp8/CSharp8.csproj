@@ -7,5 +7,6 @@
 
   <ItemGroup>
     <Folder Include="defaultInterfaceMethods\" />
+    <Folder Include="nullableReferenceTypes\" />
   </ItemGroup>
 </Project>

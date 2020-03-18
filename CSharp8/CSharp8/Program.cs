@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CSharp8.defaultInterfaceMethods;
+using CSharp8.nullableReferenceTypes;
 
 namespace CSharp8
 {
@@ -17,7 +18,9 @@ namespace CSharp8
 
             //CallUsingDeclarations();
 
-            CallStaticLocalFunctions();
+            //CallStaticLocalFunctions();
+
+            CallNullableReferenceTypes();
         }
 
         private static void CallReadOnlyMembers()
@@ -101,6 +104,11 @@ namespace CSharp8
         {
             int result = new StaticLocalFunctions().M();
             Console.WriteLine($"result:{result}");
+        }
+
+        private static void CallNullableReferenceTypes()
+        {
+            NullableReferenceTypes.BasicExample();
         }
     }
 }
