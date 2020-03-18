@@ -22,7 +22,9 @@ namespace CSharp8
 
             //CallNullableReferenceTypes();
 
-            CallAsyncStream();
+            //CallAsyncStream();
+
+            CallIndicesAndRange();
         }
 
         private static void CallReadOnlyMembers()
@@ -119,6 +121,25 @@ namespace CSharp8
             {
                 Console.WriteLine(number);
             }
+        }
+
+        private static void CallIndicesAndRange()
+        {
+            Console.WriteLine($"The last word is {IndicesAndRange.words[^1]}");
+            var subwords = IndicesAndRange.words[1..4];
+            foreach (var word in subwords)
+            {
+                Console.WriteLine($"word:{word}");
+            }
+
+            //start..end のstart,endはともに省略可能
+            var allWords = IndicesAndRange.words[..];
+            var firstPhrase = IndicesAndRange.words[..4];
+            var lastPhrase = IndicesAndRange.words[6..];
+
+            //Rangeオブジェクトとして宣言することも可能
+            Range range = 1..4;
+            var text = IndicesAndRange.words[range];
         }
     }
 }
