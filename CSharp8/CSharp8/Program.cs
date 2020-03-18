@@ -20,7 +20,9 @@ namespace CSharp8
 
             //CallStaticLocalFunctions();
 
-            CallNullableReferenceTypes();
+            //CallNullableReferenceTypes();
+
+            CallAsyncStream();
         }
 
         private static void CallReadOnlyMembers()
@@ -109,6 +111,14 @@ namespace CSharp8
         private static void CallNullableReferenceTypes()
         {
             NullableReferenceTypes.BasicExample();
+        }
+
+        private static async void CallAsyncStream()
+        {
+            await foreach(var number in AsyncStream.GenerateSequence())
+            {
+                Console.WriteLine(number);
+            }
         }
     }
 }
