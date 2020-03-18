@@ -4,10 +4,18 @@ namespace CSharp8.nullableReferenceTypes
     /*
     nullableの仕組みを適用するためには、明示的にcontextを宣言しなければならない。
     以下のcontextにより、nullableを有効にする
-    なお、デフォルトだとnullable=false
+    なお、デフォルトだとnullable=disable
     ちなみに、ソースごとに書くのが面倒な場合は.csprojに
     <Nullable>enable</Nullable>
     と書くことでnullableの仕組みをプロジェクト全体に適用することもできる。
+    取りうる値は、
+    ・enable
+    ・warnings:警告出す
+    ・annotations
+    ・disable
+
+    詳細は以下。
+    https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references#nullable-contexts
     */
 
     /*
@@ -17,7 +25,7 @@ namespace CSharp8.nullableReferenceTypes
    ・Oblivious:警告なし。nulllチェックは自己責任で。(デフォルト)
    ・Unknown:nullになるかどうかわからない。
     */
-    #nullable enable
+#nullable enable
     public class NullableReferenceTypes
     { 
         public static void BasicExample()
