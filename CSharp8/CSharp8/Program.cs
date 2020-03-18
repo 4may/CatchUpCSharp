@@ -24,7 +24,9 @@ namespace CSharp8
 
             //CallAsyncStream();
 
-            CallIndicesAndRange();
+            //CallIndicesAndRange();
+
+            CallNullCoalescingAssignment();
         }
 
         private static void CallReadOnlyMembers()
@@ -140,6 +142,11 @@ namespace CSharp8
             //Rangeオブジェクトとして宣言することも可能
             Range range = 1..4;
             var text = IndicesAndRange.words[range];
+        }
+
+        private static void CallNullCoalescingAssignment()
+        {
+            NullCoalescingAssignment.Example();
         }
     }
 }
