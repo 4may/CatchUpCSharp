@@ -30,7 +30,16 @@ namespace CSharp9
             //positional record supports deconstruct method
             var (first, last, level) = student;
             Console.WriteLine($"{first},{last},{level}");
-           
+
+            //-------------Init only setters-----------------
+            var now = new WeatherObservation
+            {
+                RecordedAt = DateTime.Now,
+                TemperatureInCelsius = 20,
+                PressureInMillibars = 998.0m
+            };
+            //CS8852: Init-only property or indexer 'WeatherObservation.RecordedAt' can only be assigned in an object initializer, or on 'this' or 'base' in an instance constructor or an 'init' accessor.
+            //now.RecordedAt = 18;
         }
     }
 }
