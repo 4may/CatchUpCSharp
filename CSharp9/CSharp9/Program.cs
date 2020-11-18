@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using CSharp9.Record;
 
 namespace CSharp9
 {
+    /// <summary>
+    /// https://docs.microsoft.com/ja-jp/dotnet/csharp/whats-new/csharp-9
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
@@ -34,12 +38,18 @@ namespace CSharp9
             //-------------Init only setters-----------------
             var now = new WeatherObservation
             {
+                //immutable properties
                 RecordedAt = DateTime.Now,
                 TemperatureInCelsius = 20,
                 PressureInMillibars = 998.0m
             };
-            //CS8852: Init-only property or indexer 'WeatherObservation.RecordedAt' can only be assigned in an object initializer, or on 'this' or 'base' in an instance constructor or an 'init' accessor.
+
+            //CS8852: Init-only property or indexer 'WeatherObservation.RecordedAt'
+            //can only be assigned in an object initializer, or on 'this' or 'base' in an instance constructor or an 'init' accessor.
             //now.RecordedAt = 18;
+
+            //-------------Fit and finish features---------------
+            WeatherObservation observation = new() { RecordedAt = DateTime.Now, PressureInMillibars = 0.1m, TemperatureInCelsius = 0.1m };
         }
     }
 }
